@@ -27,21 +27,18 @@ public class Driver {
 		// serviced, instead of not adding them in the first place in each reader
 		List<Report> filteredResults = allReports.stream().filter(r -> r.getPacketserviced() != 0)
 				.sorted((r1, r2) -> r1.getRequestTime().compareTo(r2.getRequestTime())).collect(Collectors.toList());
-		System.out.printf("total results: %d", allReports.size());
-		System.out.printf("total filtered results: %d", filteredResults.size());
 		try {
 			String filePath = "output/results.csv";
 			File file = new File(filePath);
 			file.createNewFile();
 			Path path = Paths.get(file.toURI());
-			System.out.println(file.toURI().toString());
 			Writer.writeToCSV(filteredResults, path);
 		} catch (NullPointerException npe) {
 			npe.printStackTrace();
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
-		
+
 		results.printServiceGUIDRecords();
 	}
 
