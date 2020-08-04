@@ -13,3 +13,11 @@ Please provide source, documentation on how to run the program and an explanatio
 ## Submission
 
 You may fork this repo, commit your work and let us know of your project's location, or you may email us your project files in a zip file.
+
+## Submission Notes
+
+How to run
+1. Open CMD.
+2. Change current directory to root of the repository
+3. Execute the following command `java -jar datamerge.jar`. (Make sure you are up to date with the JRE on your system). 
+4. Output in the console is the summary. Open the csv found in `datamerge\output\results.csv` to see the other data.
